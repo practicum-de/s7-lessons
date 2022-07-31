@@ -1,0 +1,1 @@
+USER_HOST = 'xx.xx.xx.xx' # укажите свой хост
