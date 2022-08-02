@@ -22,6 +22,10 @@ def submit(t_code, rlz_file=''):
     u_settings = importlib.import_module('settings')
     USER_HOST = u_settings.USER_HOST
 
+    print(f'HOST: {USER_HOST}')
+
+    print(f'{TerminalColors.OKGREEN}Для создания подключения потребуется некоторое время...{TerminalColors.ENDC}')
+
     r = requests.post(
         f'http://{USER_HOST}:3002',
         json={
