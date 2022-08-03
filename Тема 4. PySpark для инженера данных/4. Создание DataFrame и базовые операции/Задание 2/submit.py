@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import importlib
 
@@ -50,13 +51,13 @@ def submit(t_code, rlz_file=''):
     except requests.exceptions.Timeout as e: 
         print(e)
         return
-
+    
     print(r.json()['stderr'].replace('__test',rlz_file[:-3]))
     print(r.json()['stdout'].replace('__test',rlz_file[:-3]))
 
 if __name__ == '__main__':
     submit(
-        'de07040401',
+        'de07040402',
         'realization.py'
     )
 

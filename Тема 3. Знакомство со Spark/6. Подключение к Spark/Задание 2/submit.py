@@ -37,13 +37,19 @@ def submit(t_code, rlz_file=''):
 
     print(f'{TerminalColors.OKGREEN}Для создания подключения потребуется некоторое время...{TerminalColors.ENDC}')
 
-    r = requests.post(
-        f'http://{USER_HOST}:3002',
-        json={
-            "code": user_code,
-            "test": t_code,
-            "conn": user_settings
-            })
+    try:
+        r = requests.post(
+            f'http://{USER_HOST}:3002',
+            json={
+                "code": user_code,
+                "test": t_code,
+                "conn": user_settings
+                },
+            timeout=180
+        )
+    except requests.exceptions.Timeout as e: 
+        print(e)
+        return
 
     print(r.json()['stderr'].replace('__test',rlz_file[:-3]))
     print(r.json()['stdout'].replace('__test',rlz_file[:-3]))
