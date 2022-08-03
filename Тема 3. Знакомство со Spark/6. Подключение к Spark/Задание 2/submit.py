@@ -24,7 +24,7 @@ def submit(t_code, rlz_file=''):
         with open(user_file, 'r') as u_file:
             user_code = u_file.read()
 
-    settings_path = os.path.dirname(os.path.abspath(__file__)).split('s7-lessons')[0]+'s7-lessons'
+    settings_path = os.path.dirname(os.path.abspath(__file__)).split('Тема')[0]
     settings_file = f'{settings_path}/settings.py'
     with open(settings_file) as settings:
         user_settings = settings.read()
