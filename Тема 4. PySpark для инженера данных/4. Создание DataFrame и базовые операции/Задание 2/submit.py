@@ -36,7 +36,7 @@ def submit(t_code, rlz_file=''):
 
     print(f'HOST: {USER_HOST}')
 
-    print(f'{TerminalColors.OKGREEN}Для создания подключения потребуется некоторое время...{TerminalColors.ENDC}')
+    # print(f'{TerminalColors.OKGREEN}Для создания подключения потребуется некоторое время...{TerminalColors.ENDC}')
 
     try:
         r = requests.post(
