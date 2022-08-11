@@ -45,7 +45,7 @@ def submit(t_code, rlz_file=''):
                 "test": t_code,
                 "conn": user_settings
                 },
-            timeout=20
+            timeout=1200
         )
     except requests.exceptions.Timeout as e: 
         print(e)
