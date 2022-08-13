@@ -58,12 +58,9 @@ def submit(t_code, rlz_file=''):
     print(r.json()['stdout'].replace('__test',rlz_file[:-3]))
 
 if __name__ == '__main__':
-    # from time import time
-    # start = time()
     submit(
-        'de07050301',
+        'de07050303',
         'realization.py'
     )
-    # end = time()
-    # print(end-start)
+
 

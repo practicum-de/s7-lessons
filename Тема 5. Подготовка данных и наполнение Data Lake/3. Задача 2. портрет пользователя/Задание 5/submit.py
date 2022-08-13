@@ -48,7 +48,7 @@ def submit(t_code, rlz_file=''):
                 "test": t_code,
                 "conn": user_settings
                 },
-            timeout=4000
+            timeout=5000
         )
     except requests.exceptions.Timeout as e: 
         print(e)
@@ -58,12 +58,9 @@ def submit(t_code, rlz_file=''):
     print(r.json()['stdout'].replace('__test',rlz_file[:-3]))
 
 if __name__ == '__main__':
-    # from time import time
-    # start = time()
     submit(
-        'de07050301',
+        'de07050305',
         'realization.py'
     )
-    # end = time()
-    # print(end-start)
+
 
