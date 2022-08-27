@@ -54,6 +54,10 @@ def submit(t_code, rlz_file=''):
         print(e)
         return
 
+    if r.status_code == 500:
+        print('Сервер вернул ошибку 500')
+        return
+
     print(r.json()['stderr'].replace('__test',rlz_file[:-3]))
     print(r.json()['stdout'].replace('__test',rlz_file[:-3]))
 
