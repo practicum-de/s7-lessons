@@ -38,6 +38,8 @@ def submit(t_code, rlz_file=''):
 
     print(f'HOST: {USER_HOST}')
 
+    print(f'{TerminalColors.OKGREEN}Для создания подключения потребуется некоторое время...{TerminalColors.ENDC}')
+
     try:
         r = requests.post(
             f'http://{USER_HOST}:3002',
@@ -46,7 +48,7 @@ def submit(t_code, rlz_file=''):
                 "test": t_code,
                 "conn": user_settings
                 },
-            timeout=20
+            timeout=180
         )
     except requests.exceptions.Timeout as e: 
         print(e)
