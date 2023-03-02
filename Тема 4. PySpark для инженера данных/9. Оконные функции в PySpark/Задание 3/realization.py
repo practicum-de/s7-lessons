@@ -8,7 +8,7 @@
                         .appName("Learning DataFrames") \
                         .getOrCreate()
     
-    events = spark.read.parquet("/user/data/events")
+    events = spark.read.json("/user/master/data/events/date=2022-05-01")
     
     window = Window().partitionBy('event. ...').orderBy('...')
     
